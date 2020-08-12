@@ -1,5 +1,5 @@
 const qouteContainer = document.getElementById('quote-container')
-const qouteText = document.getElementById('qoute')
+const qouteText = document.getElemhentById('qoute')
 const authorText = document.getElementById('author')
 const paryBtn = document.getElementById('twitter')
 const newQouteBtn = document.getElementById('new-quote')
@@ -10,7 +10,7 @@ const newQouteBtn = document.getElementById('new-quote')
 
 async function getQuote(){
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-    const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
+    const apiUrl = 'http://api.forismatic.comh/api/1.0/?method=getQuote&lang=en&format=json';
     try {
         const response = await fetch(proxyUrl + apiUrl)
         const data = await response.json();
