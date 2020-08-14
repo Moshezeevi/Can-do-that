@@ -9,7 +9,7 @@ const newQouteBtn = document.getElementById('new-quote')
 
 
 async function getQuote(){
-    const proxyUrl = 'https://obscure-earth-96157.herokuapp.com/';
+    const proxyUrl = 'https://mighty-inlet-53536.herokuapp.com/'
     const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp';
     try {
         const response = await fetch(proxyUrl + apiUrl)
