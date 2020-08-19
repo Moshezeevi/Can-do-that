@@ -14,15 +14,36 @@ async function getQuote(){
     try {
         const response = await fetch(proxyUrl + apiUrl);
         const data = await response.json();
-        authorText.innerText = data.quoteAuthor;
+        // if aouther is blank, add 'unknow'
+        if (data.quoteAuthor === '') {
+            authorText.innerText = 'Unknow';
+
+        }else{
+            authorText.innerText = data.quoteAuthor;
+        }
+
+        // Reducs font size for long quotes/
+        if (data.quoteText.length > 120) {
+            quoteText.classList.add('long-quote');
+        } else {
+            quoteText.classList.remove('long-quote');
+        }
         quoteText.innerText = data.quoteText;
-        console.log(data);
+        
     }  catch(error){
          getQuote();
          console.log('Whops, no quote', error)
     }
 }
 
+function tweetQuote() {
+    const quote = quoteText.innerText;
+    const aouther = aoutherText.innerText
+}
 // on load
 
 getQuote();
+
+
+// file save text
+ 
